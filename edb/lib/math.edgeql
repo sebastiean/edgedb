@@ -402,3 +402,392 @@ math::var_pop(vals: SET OF std::float64) -> OPTIONAL std::float64
     SET error_on_null_result := 'invalid input to var_pop(): not ' ++
                                 'enough elements in input set';
 };
+
+
+# math::acos
+# ----------
+CREATE FUNCTION
+math::acos(x: std::float64) -> std::float64
+{
+    CREATE ANNOTATION std::description := 'Inverse cosine, result in radians.';
+    SET volatility := 'Immutable';
+    SET force_return_cast := true;
+    USING SQL FUNCTION 'acos';
+};
+
+
+# math::acosd
+# ----------
+CREATE FUNCTION
+math::acosd(x: std::decimal) -> std::decimal
+{
+    CREATE ANNOTATION std::description := 'Inverse cosine, result in degrees.';
+    SET volatility := 'Immutable';
+    SET force_return_cast := true;
+    USING SQL FUNCTION 'acosd';
+};
+
+
+CREATE FUNCTION
+math::acosd(x: std::float64) -> std::float64
+{
+    CREATE ANNOTATION std::description := 'Inverse cosine, result in degrees.';
+    SET volatility := 'Immutable';
+    USING SQL FUNCTION 'acosd';
+};
+
+
+# math::asin
+# ----------
+CREATE FUNCTION
+math::asin(x: std::decimal) -> std::float64
+{
+    CREATE ANNOTATION std::description := 'Inverse sine, result in radians.';
+    SET volatility := 'Immutable';
+    USING SQL FUNCTION 'asin';
+};
+
+
+CREATE FUNCTION
+math::asin(x: std::float64) -> std::float64
+{
+    CREATE ANNOTATION std::description := 'Inverse sine, result in radians.';
+    SET volatility := 'Immutable';
+    USING SQL FUNCTION 'asin';
+};
+
+
+# math::asind
+# ----------
+CREATE FUNCTION
+math::asind(x: std::decimal) -> std::float64
+{
+    CREATE ANNOTATION std::description := 'Inverse sine, result in degrees.';
+    SET volatility := 'Immutable';
+    USING SQL FUNCTION 'asind';
+};
+
+
+CREATE FUNCTION
+math::asind(x: std::float64) -> std::float64
+{
+    CREATE ANNOTATION std::description := 'Inverse sine, result in degrees.';
+    SET volatility := 'Immutable';
+    USING SQL FUNCTION 'asind';
+};
+
+
+# math::atan
+# ----------
+CREATE FUNCTION
+math::atan(x: std::decimal) -> std::float64
+{
+    CREATE ANNOTATION std::description := 'Inverse tangent, result in radians.';
+    SET volatility := 'Immutable';
+    USING SQL FUNCTION 'atan';
+};
+
+
+CREATE FUNCTION
+math::atan(x: std::float64) -> std::float64
+{
+    CREATE ANNOTATION std::description := 'Inverse tangent, result in radians.';
+    SET volatility := 'Immutable';
+    USING SQL FUNCTION 'atan';
+};
+
+
+# math::atand
+# ----------
+CREATE FUNCTION
+math::atand(x: std::decimal) -> std::float64
+{
+    CREATE ANNOTATION std::description := 'Inverse tangent, result in degrees.';
+    SET volatility := 'Immutable';
+    USING SQL FUNCTION 'atand';
+};
+
+
+CREATE FUNCTION
+math::atand(x: std::float64) -> std::float64
+{
+    CREATE ANNOTATION std::description := 'Inverse tangent, result in degrees.';
+    SET volatility := 'Immutable';
+    USING SQL FUNCTION 'atand';
+};
+
+
+# math::atan2
+# ----------
+CREATE FUNCTION
+math::atan2(x: std::float64, y: std::float64) -> std::float64
+{
+    CREATE ANNOTATION std::description := 'Inverse tangent of y/x, result in radians.';
+    SET volatility := 'Immutable';
+    USING SQL FUNCTION 'atan2';
+};
+
+
+CREATE FUNCTION
+math::atan2(x: std::decimal, y: std::decimal) -> std::float64
+{
+    CREATE ANNOTATION std::description := 'Inverse tangent of y/x, result in radians.';
+    SET volatility := 'Immutable';
+    USING SQL FUNCTION 'atan2';
+};
+
+
+# math::atan2d
+# ----------
+CREATE FUNCTION
+math::atan2d(x: std::float64, y: std::float64) -> std::float64
+{
+    CREATE ANNOTATION std::description := 'Inverse tangent of y/x, result in degrees.';
+    SET volatility := 'Immutable';
+    USING SQL FUNCTION 'atan2d';
+};
+
+
+CREATE FUNCTION
+math::atan2d(x: std::decimal, y: std::decimal) -> std::float64
+{
+    CREATE ANNOTATION std::description := 'Inverse tangent of y/x, result in degrees.';
+    SET volatility := 'Immutable';
+    USING SQL FUNCTION 'atan2d';
+};
+
+
+# math::cos
+# ----------
+CREATE FUNCTION
+math::cos(x: std::decimal) -> std::float64
+{
+    CREATE ANNOTATION std::description := 'Cosine, result in radians.';
+    SET volatility := 'Immutable';
+    USING SQL FUNCTION 'cos';
+};
+
+
+CREATE FUNCTION
+math::cos(x: std::float64) -> std::float64
+{
+    CREATE ANNOTATION std::description := 'Cosine, result in radians.';
+    SET volatility := 'Immutable';
+    USING SQL FUNCTION 'cos';
+};
+
+
+# math::cosd
+# ----------
+CREATE FUNCTION
+math::cosd(x: std::decimal) -> std::float64
+{
+    CREATE ANNOTATION std::description := 'Cosine, result in degrees.';
+    SET volatility := 'Immutable';
+    USING SQL FUNCTION 'cosd';
+};
+
+
+CREATE FUNCTION
+math::cosd(x: std::float64) -> std::float64
+{
+    CREATE ANNOTATION std::description := 'Cosine, result in degrees.';
+    SET volatility := 'Immutable';
+    USING SQL FUNCTION 'cosd';
+};
+
+
+# math::cot
+# ----------
+CREATE FUNCTION
+math::cot(x: std::decimal) -> std::float64
+{
+    CREATE ANNOTATION std::description := 'Cotangent, result in radians.';
+    SET volatility := 'Immutable';
+    USING SQL FUNCTION 'cot';
+};
+
+
+CREATE FUNCTION
+math::cot(x: std::float64) -> std::float64
+{
+    CREATE ANNOTATION std::description := 'Cotangent, result in radians.';
+    SET volatility := 'Immutable';
+    USING SQL FUNCTION 'cot';
+};
+
+
+# math::cotd
+# ----------
+CREATE FUNCTION
+math::cotd(x: std::decimal) -> std::float64
+{
+    CREATE ANNOTATION std::description := 'Cotangent, result in degrees.';
+    SET volatility := 'Immutable';
+    USING SQL FUNCTION 'cotd';
+};
+
+
+CREATE FUNCTION
+math::cotd(x: std::float64) -> std::float64
+{
+    CREATE ANNOTATION std::description := 'Cotangent, result in degrees.';
+    SET volatility := 'Immutable';
+    USING SQL FUNCTION 'cotd';
+};
+
+
+# math::sin
+# ----------
+CREATE FUNCTION
+math::sin(x: std::decimal) -> std::float64
+{
+    CREATE ANNOTATION std::description := 'Sine, result in radians.';
+    SET volatility := 'Immutable';
+    USING SQL FUNCTION 'sin';
+};
+
+
+CREATE FUNCTION
+math::sin(x: std::float64) -> std::float64
+{
+    CREATE ANNOTATION std::description := 'Sine, result in radians.';
+    SET volatility := 'Immutable';
+    USING SQL FUNCTION 'sin';
+};
+
+
+# math::sind
+# ----------
+CREATE FUNCTION
+math::sind(x: std::decimal) -> std::decimal
+{
+    CREATE ANNOTATION std::description := 'Sine, result in degrees.';
+    SET volatility := 'Immutable';
+    SET force_return_cast := true;
+    USING SQL FUNCTION 'sind';
+};
+
+
+CREATE FUNCTION
+math::sind(x: std::float64) -> std::float64
+{
+    CREATE ANNOTATION std::description := 'Sine, result in degrees.';
+    SET volatility := 'Immutable';
+    USING SQL FUNCTION 'sind';
+};
+
+
+# math::tan
+# ----------
+CREATE FUNCTION
+math::tan(x: std::decimal) -> std::decimal
+{
+    CREATE ANNOTATION std::description := 'Tangent, result in radians.';
+    SET volatility := 'Immutable';
+    SET force_return_cast := true;
+    USING SQL FUNCTION 'tan';
+};
+
+
+CREATE FUNCTION
+math::tan(x: std::float64) -> std::float64
+{
+    CREATE ANNOTATION std::description := 'Tangent, result in radians.';
+    SET volatility := 'Immutable';
+    USING SQL FUNCTION 'tan';
+};
+
+
+# math::tand
+# ----------
+CREATE FUNCTION
+math::tand(x: std::decimal) -> std::decimal
+{
+    CREATE ANNOTATION std::description := 'Tangent, result in degrees.';
+    SET volatility := 'Immutable';
+    SET force_return_cast := true;
+    USING SQL FUNCTION 'tand';
+};
+
+
+CREATE FUNCTION
+math::tand(x: std::float64) -> std::float64
+{
+    CREATE ANNOTATION std::description := 'Tangent, result in degrees.';
+    SET volatility := 'Immutable';
+    USING SQL FUNCTION 'tand';
+};
+
+
+# math::pi
+# --------
+CREATE FUNCTION
+math::pi() -> std::float64
+{
+    CREATE ANNOTATION std::description := 'Approximate value of π.';
+    SET volatility := 'Immutable';
+    USING SQL FUNCTION 'pi';
+};
+
+# math::cbrt
+# ----------
+CREATE FUNCTION
+math::cbrt(x: std::float64) -> std::float64
+{
+    CREATE ANNOTATION std::description := 'Cube root.';
+    SET volatility := 'Immutable';
+    USING SQL FUNCTION 'cbrt';
+};
+
+
+CREATE FUNCTION
+math::cbrt(x: std::decimal) -> std::decimal
+{
+    CREATE ANNOTATION std::description := 'Cube root.';
+    SET volatility := 'Immutable';
+    SET force_return_cast := true;
+    USING SQL FUNCTION 'cbrt';
+};
+
+
+# math::degrees
+# ----------
+CREATE FUNCTION
+math::degrees(x: std::float64) -> std::float64
+{
+    CREATE ANNOTATION std::description := 'Convert radians input value to degrees.';
+    SET volatility := 'Immutable';
+    USING SQL FUNCTION 'degrees';
+};
+
+
+CREATE FUNCTION
+math::degrees(x: std::decimal) -> std::decimal
+{
+    CREATE ANNOTATION std::description := 'Convert radians input value to degrees.';
+    SET volatility := 'Immutable';
+    SET force_return_cast := true;
+    USING SQL FUNCTION 'degrees';
+};
+
+
+# math::radians
+# ----------
+CREATE FUNCTION
+math::radians(x: std::float64) -> std::float64
+{
+    CREATE ANNOTATION std::description := 'Convert degrees input value to radians.';
+    SET volatility := 'Immutable';
+    USING SQL FUNCTION 'radians';
+};
+
+
+CREATE FUNCTION
+math::radians(x: std::decimal) -> std::decimal
+{
+    CREATE ANNOTATION std::description := 'Convert degrees input value to radians.';
+    SET volatility := 'Immutable';
+    SET force_return_cast := true;
+    USING SQL FUNCTION 'radians';
+};
